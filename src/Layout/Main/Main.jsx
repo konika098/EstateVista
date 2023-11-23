@@ -9,7 +9,10 @@ const Main = () => {
             <Headroom>
                <Header/>
             </Headroom>
+            <div className="min-h-[calc(100vh-300px)]">
             <Outlet/>
+            </div>
+            
             <Footer/>
 
            
