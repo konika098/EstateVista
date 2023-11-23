@@ -13,7 +13,7 @@ const Header = () => {
   );
 
   return (
-    <div className="bg-[#004274] text-white">
+    <div className="bg-base text-[#004274]">
       <div className="navbar relative backdrop-filter backdrop-blur-md">
         <div className="navbar-start">
           <div className="dropdown">

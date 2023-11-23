@@ -1,3 +1,5 @@
+import { FaFacebookF ,FaGoogle,FaInstagramSquare, FaLinkedinIn, FaTwitter } from "react-icons/fa";
+
 
 
 const Footer = () => {
@@ -46,26 +48,28 @@ const Footer = () => {
                         <h1 className="text-white text-xl font-medium tracking-[0.030rem]"> Join Our Newsletter </h1> <br />
                         <p className="text-white w-3/5 leading-7 mb-5 md:w-3/4"> Join 25,000+ others and never miss out on new
                             tips,tutorials, and more. </p> <input type="email" placeholder="Enter E-mail Here" className="py-1 px-2 placeholder-gray-400 rounded-tl-xl focus: outline-none focus:border border-orange-200 md:w-1/2 lg:w-3/5" />
-                        <button className="text-black bg-cyan-400 p-1 -translate-x-1 rounded-br-xl "> Subscribe
+                        <button className="text-white bg-cyan-400 p-1 -translate-x-1 rounded-br-xl "> Subscribe
                         </button>
                     </div>
                 </div>
                 <div className="bg-[#004274] p-3 flex flex-col text-center pt-5 space-y-8 md:flex-row md:justify-between md:space-y-0">
-                    <div className="flex mx-3 justify-between space-x-20 md:flex-row text-gray-200 md:space-x-28 md:ml-20 lg:ml-24 lg:space-x-[13rem] xl:space-x-72 xl:ml-24">
+                    <div className="flex mx-3 justify-between space-x-20 md:flex-row text-white md:space-x-28 md:ml-20 lg:ml-24 lg:space-x-[13rem] xl:space-x-72 xl:ml-24">
                         <p>@ Copyright <strong>Company.</strong>All Rights Reserved</p>
                         <p>Designed by <span className="text-white">Konika Khan</span></p>
                     </div>
-                    <div className="text-white pb-4 text-center text-xl space-x-2 md:w-2/4 md:pb-0 md:pl-2 md:space-x-1 lg:pl-[171px] lg:space-x-2 xl:pl-44">
-                        <a href="#" className="w-8 h-8 bg-cyan-400 hover:text-cyan-400 inline-block rounded-full pt-[3px] hover:bg-gray-200">
-                            <i className="fa fa-twitter" />
+                    <div className="text-white flex pb-4 text-center text-xl space-x-2 md:w-2/4 md:pb-0 md:pl-2 md:space-x-1 lg:pl-[171px] lg:space-x-2 xl:pl-44">
+                        <a href="#" className="w-8 h-8 bg-cyan-400 hover:text-cyan-400  rounded-full  flex justify-center p-2 items-center hover:bg-gray-200">
+                        <FaFacebookF />
                             </a> 
-                            <a href="#" className="w-8 h-8 bg-cyan-400 hover:text-cyan-400 inline-block rounded-full pt-[3px] hover:bg-gray-200">
-                                <i className="fa fa-instagram" /></a> 
-                                <a href="#" className="w-8 h-8 bg-cyan-400 hover:text-cyan-400 inline-block rounded-full pt-[3px] hover:bg-gray-200">
-                                    <i className="fa fa-facebook" /></a>
-                                     <a href="#" className="w-8 h-8 bg-cyan-400 hover:text-cyan-400 inline-block rounded-full pt-[3px] hover:bg-gray-200">
-                                        <i className="fa fa-google" /></a> <a href="#" className="w-8 h-8 bg-cyan-400 hover:text-orange-500 inline-block rounded-full pt-[3px] hover:bg-gray-200">
-                                            <i className="fa fa-linkedin" /></a> 
+                            <a href="#" className="w-8 h-8 bg-cyan-400 hover:text-cyan-400 rounded-full  flex justify-center p-2 items-center hover:bg-gray-200">
+                            <FaTwitter /></a> 
+
+                                <a href="#" className="w-8 h-8 bg-cyan-400 hover:text-cyan-400 rounded-full flex justify-center p-2 items-center hover:bg-gray-200">
+                                <FaInstagramSquare /></a>
+                                     <a href="#" className="w-8 h-8 bg-cyan-400 hover:text-cyan-400 rounded-full  flex justify-center p-2 items-center hover:bg-gray-200">
+                                     <FaLinkedinIn /></a> 
+                                     <a href="#" className="w-8 h-8 bg-cyan-400 hover:text-cyan-400 rounded-full flex justify-center p-2 items-center hover:bg-gray-200">
+                                     <FaGoogle /></a> 
                                             </div>
                 </div>
             </div>
