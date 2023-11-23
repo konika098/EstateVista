@@ -1,0 +1,39 @@
+[
+    {
+      "id": 1,
+      "icon":"https://i.ibb.co/0tgxnc3/3099889.png",
+      "serviceName": "Property Management",
+      "description": "Comprehensive property management services to enhance the value and efficiency of your real estate investments."
+    },
+    {
+      "id": 2,
+      "icon":"https://i.ibb.co/xXBJCjz/money-flow-1555401-1317168.png",
+      "serviceName": "Capital Improvements",
+      "description": "Strategic planning and execution of capital improvement projects to elevate the quality and performance of your properties."
+    },
+    {
+      "id": 3,
+      "icon":"https://i.ibb.co/WnZyBNQ/Project-Icon-removebg-preview.png",
+      "serviceName": "Financial Reporting",
+      "description": "Detailed and transparent financial reporting services to keep you informed about the financial performance of your real estate portfolio."
+    },
+    {
+      "id": 4,
+      "icon":"https://i.ibb.co/vhdkYx4/3439283.png",
+      "serviceName": "Business Development",
+      "description": "Tailored business development strategies to drive growth and maximize the potential of your real estate ventures."
+    },
+    {
+      "id": 5,
+      "icon":"https://i.ibb.co/djKMcRw/165-1656645-real-estate-commercial-symbol-of-a-house-with.jpg",
+      "serviceName": "Finance Real Estate",
+      "description": "Specialized financial solutions and consultations for real estate transactions, ensuring optimal financial structures."
+    },
+    {
+      "id": 6,
+      "icon":"https://i.ibb.co/7rmn5Y9/png-transparent-investor-investment-computer-icons-finance-others-miscellaneous-investment-logo.png",
+      "serviceName": "Recover Asset Value",
+      "description": "Proactive measures and strategies to recover and enhance the value of distressed or underperforming real estate assets."
+    }
+  ]
+  
