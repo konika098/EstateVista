@@ -3,12 +3,13 @@ import { useContext, useState } from 'react';
 import { Navigate, useLocation, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../../Provider/AuthProvider';
+import useAxiosPublic from '../../Hooks/usePublic/useAxiosPublic';
 
 
 const Contact = () => {
     const [activeTab, setActiveTab] = useState('login');
     const { logIn, googleLogin, createUser, updateUserDetails } = useContext(AuthContext)
-
+    const axiosPublic =useAxiosPublic()
     const logInNav = useNavigate()
     const location = useLocation();
 
@@ -20,7 +21,16 @@ const Contact = () => {
         googleLogin()
         .then(result => {
             console.log(result);
-            logInNav('/')
+            const userInfo ={
+                email:result.user?.email,
+                name:result.user.displayName
+            }
+            axiosPublic.post('/users',userInfo)
+            .then(res=>{
+                console.log(res.data)
+                logInNav('/')
+            })
+           
             
             Swal.fire({
                 icon: "success",
@@ -62,7 +72,17 @@ const Contact = () => {
             logIn(email, password)
                 .then(result => {
                     console.log(result);
-                    logInNav("/");
+                    const userInfo ={
+                        email:result.user?.email,
+                        name:result.user.displayName
+                    }
+                    axiosPublic.post('/users',userInfo)
+                    .then(res=>{
+                        console.log(res.data)
+                     
+                    })
+                    logInNav('/')
+                   
                     Swal.fire({
                         icon: "success",
                         title: "Login Successful",
@@ -134,7 +154,7 @@ const Contact = () => {
                         title: "Register Successful",
                         text: "You have successfully registered!",
                     });
-                     window.location.reload()
+                    //  window.location.reload()
                 })
                 .catch(error => {
                     console.log(error);

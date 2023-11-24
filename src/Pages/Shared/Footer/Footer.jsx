@@ -47,9 +47,11 @@ const Footer = () => {
                     <div className="md:order-2 lg:order-last">
                         <h1 className="text-white text-xl font-medium tracking-[0.030rem]"> Join Our Newsletter </h1> <br />
                         <p className="text-white w-3/5 leading-7 mb-5 md:w-3/4"> Join 25,000+ others and never miss out on new
-                            tips,tutorials, and more. </p> <input type="email" placeholder="Enter E-mail Here" className="py-1 px-2 placeholder-gray-400 rounded-tl-xl focus: outline-none focus:border border-orange-200 md:w-1/2 lg:w-3/5" />
-                        <button className="text-white bg-cyan-400 p-1 -translate-x-1 rounded-br-xl "> Subscribe
-                        </button>
+                            tips,tutorials, and more. </p> 
+                            <input type="email" placeholder="Enter E-mail Here" className="py-1 px-2 placeholder-gray-400 rounded-tl-xl focus: outline-none focus:border border-orange-200 md:w-1/2 lg:w-3/5" />
+                       
+                        <button className="text-white bg-cyan-400 p-1 -translate-x-1 rounded-br-xl  border-none "> Subscribe </button>
+                        
                     </div>
                 </div>
                 <div className="bg-[#004274] p-3 flex flex-col text-center pt-5 space-y-8 md:flex-row md:justify-between md:space-y-0">

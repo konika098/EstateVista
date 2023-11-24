@@ -8,6 +8,9 @@ import PrivateRoute from "../Provider/PrivateRoute";
 
 import Contact from "../Pages/Contact/Contact";
 import AllProperties from "../Pages/AllProperties/AllProperties";
+import Dashboard from "../Pages/Dashboard/Dashboard";
+import ManageUser from "../Pages/Dashboard/ManageUser";
+
 
   export const router = createBrowserRouter([
     {
@@ -32,6 +35,17 @@ import AllProperties from "../Pages/AllProperties/AllProperties";
         element:<AllProperties/>
 
        },
+       {
+        path:'/dashboard',
+        element:<Dashboard/>,
+        
+          
+        
+       },
+       {
+        path:'/ManageUsers',
+        element:<ManageUser/>
+      }
        
 
       ]
