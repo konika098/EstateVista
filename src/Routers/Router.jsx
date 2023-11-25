@@ -14,6 +14,15 @@ import Dashboard from "../Pages/Dashboard/Dashboard";
 import AdminProfile from "../Pages/Dashboard/Admin/AdminProfile";
 import ManageReview from "../Pages/Dashboard/Admin/ManageReview";
 import ManageProperties from "../Pages/Dashboard/Admin/ManageProperties";
+import AgentProfile from "../Pages/Dashboard/Agent/AgentProfile";
+import MyAddProperties from "../Pages/Dashboard/Agent/MyAddProperties";
+import MySoldProperties from "../Pages/Dashboard/Agent/MySoldProperties";
+import RequestedProperties from "../Pages/Dashboard/Agent/RequestedProperties";
+import MyProfile from "../Pages/Dashboard/User/MyProfile";
+import MyReviews from "../Pages/Dashboard/User/MyReviews";
+import Property from "../Pages/Dashboard/User/Property";
+import Wishlist from "../Pages/Dashboard/User/Wishlist";
+import AdminRoute from "../Provider/AdminRoute";
 
 
 
@@ -40,31 +49,72 @@ import ManageProperties from "../Pages/Dashboard/Admin/ManageProperties";
         element:<AllProperties/>
 
        },
-       {
-        path:'/dashboard',
-        element:<Dashboard/>,
-        
-          
-        
-       },
-       {
-        path:'/ManageUsers',
-        element:<ManageUser/>
-      },
-      {
-        path:'/adminProfile',
-        element:<AdminProfile/>
-      },
-      {
-        path:'/ManageReview',
-        element:<ManageReview/>
-      },
-      {
-        path:"/ManageProperties",
-        element:<ManageProperties/>
-      }
+      
        
 
       ]
     },
+    {
+      
+        path:'/dashboard',
+        element:<Dashboard/>,
+        children:[
+          {
+            path:'/dashboard/ManageUsers',
+            element:<AdminRoute><ManageUser/></AdminRoute>
+          },
+          {
+            path:'/dashboard/adminProfile',
+            element:<AdminRoute><AdminProfile/></AdminRoute>
+          },
+          {
+            path:'/dashboard/ManageReview',
+            element:<AdminRoute><ManageReview/></AdminRoute>
+          },
+          {
+            path:"/dashboard/ManageProperties",
+            element:<AdminRoute><ManageProperties/></AdminRoute>
+          },
+          {
+            path:'/dashboard/agentProfile',
+            element:<AgentProfile/>
+          },
+          {
+            path:"/dashboard/addProperties",
+            element:<MyAddProperties/>
+          },
+          {
+            path:"/dashboard/soldProperties",
+            element:<MySoldProperties/>
+          },
+          {
+            path:"/dashboard/request",
+            element:<RequestedProperties/>
+          },
+          {
+            path:"/dashboard/myProfile",
+            element:<MyProfile/>
+          },
+          {
+            path:"/dashboard/myReview",
+            element:<MyReviews/>
+          },
+          {
+            path:"/dashboard/property",
+            element:<Property/>
+          },
+          {
+            path:"/dashboard/wishlist",
+            element:<Wishlist/>
+          },
+          
+           
+
+        ]
+        
+          
+        
+       
+      
+    }
   ]);

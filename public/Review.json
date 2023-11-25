@@ -1,0 +1,39 @@
+[
+    {
+      "ReviewerName": "Alice Johnson",
+      "ReviewerImage": "https://example.com/avatar1.jpg",
+      "ReviewDescription": "Fantastic experience! The property exceeded our expectations. Highly recommended.",
+      "ReviewTime": "2023-01-15T09:30:00Z"
+    },
+    {
+      "ReviewerName": "Bob Williams",
+      "ReviewerImage": "https://example.com/avatar2.jpg",
+      "ReviewDescription": "Great service from the agent. Smooth transaction and quick responses.",
+      "ReviewTime": "2023-02-10T14:45:00Z"
+    },
+    {
+      "ReviewerName": "Emily Davis",
+      "ReviewerImage": "https://example.com/avatar3.jpg",
+      "ReviewDescription": "Lovely property with beautiful views. The agent was helpful throughout the process.",
+      "ReviewTime": "2023-03-22T11:15:00Z"
+    },
+    {
+      "ReviewerName": "David Wilson",
+      "ReviewerImage": "https://example.com/avatar4.jpg",
+      "ReviewDescription": "Exceptional service! The property was exactly as described. We are very satisfied.",
+      "ReviewTime": "2023-04-05T18:20:00Z"
+    },
+    {
+      "ReviewerName": "Olivia White",
+      "ReviewerImage": "https://example.com/avatar5.jpg",
+      "ReviewDescription": "Smooth and easy transaction. The agent was professional and responsive.",
+      "ReviewTime": "2023-05-12T10:00:00Z"
+    },
+    {
+      "ReviewerName": "Daniel Turner",
+      "ReviewerImage": "https://example.com/avatar6.jpg",
+      "ReviewDescription": "We love our new home! The agent went above and beyond to make the process seamless.",
+      "ReviewTime": "2023-06-28T15:30:00Z"
+    }
+  ]
+  

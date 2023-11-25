@@ -1,5 +1,6 @@
 import  { useContext } from 'react';
 import { AuthContext } from '../../../Provider/AuthProvider';
+import PropertiesAdd from './PropertiesAdd';
 
 const AgentProfile = () => {
     const {user}=useContext(AuthContext)
@@ -14,11 +15,11 @@ const AgentProfile = () => {
         <h1 className="font-semibold text-center underline text-xl md:text-3xl text-[#004274]mt-10 mb-7 m-2">Agent Profile</h1>
    
     
-  <div className="flex flex-col mx-auto justify-center items-center md:flex-row shadow rounded-xl max-w-7xl md:w-[50%]  m-2">
+  <div className="flex flex-col mx-auto justify-center items-center md:flex-row shadow rounded-xl w-full p-10  m-2">
   <div>
         <img src={user.photoURL} alt="" />
     </div>
-    <form onSubmit={handleAdminForm} className=" w-full md:w-3/4  ">
+    <form onSubmit={handleAdminForm} className=" w-full ">
       
       <div className="flex flex-col justify-center items-center m-2 space-y-6 md:space-y-8">
         <div >
@@ -48,6 +49,8 @@ const AgentProfile = () => {
     </form>
    
   </div>
+
+  <PropertiesAdd/>
 
 
       

@@ -19,7 +19,7 @@ const AdminProfile = () => {
   <div>
         <img src={user.photoURL} alt="" />
     </div>
-    <form onSubmit={handleAdminForm} className=" w-full md:w-3/4  ">
+    <form onSubmit={handleAdminForm} className=" w-full  ">
       
       <div className="flex flex-col justify-center items-center m-2 space-y-6 md:space-y-8">
         <div >

@@ -24,14 +24,14 @@ const Contact = () => {
             const userInfo ={
                 email:result.user?.email,
                 name:result.user.displayName,
-                photo:user.photoUrl
+               
             }
             axiosPublic.post('/users',userInfo)
             .then(res=>{
                 console.log(res.data)
-                logInNav('/')
+                
             })
-           
+            logInNav('/')
             
             Swal.fire({
                 icon: "success",

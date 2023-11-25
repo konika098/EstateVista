@@ -57,7 +57,7 @@ const ManageUser = () => {
     return (
         <>
             <h1>im user {users.length}</h1>
-            <div className="overflow-x-auto">
+            <div className="overflow-x-auto w-full">
                 <table className="table">
                     {/* head */}
                     <thead>
