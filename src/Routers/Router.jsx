@@ -8,8 +8,13 @@ import PrivateRoute from "../Provider/PrivateRoute";
 
 import Contact from "../Pages/Contact/Contact";
 import AllProperties from "../Pages/AllProperties/AllProperties";
+
+import ManageUser from "../Pages/Dashboard/Admin/ManageUser";
 import Dashboard from "../Pages/Dashboard/Dashboard";
-import ManageUser from "../Pages/Dashboard/ManageUser";
+import AdminProfile from "../Pages/Dashboard/Admin/AdminProfile";
+import ManageReview from "../Pages/Dashboard/Admin/ManageReview";
+import ManageProperties from "../Pages/Dashboard/Admin/ManageProperties";
+
 
 
   export const router = createBrowserRouter([
@@ -45,6 +50,18 @@ import ManageUser from "../Pages/Dashboard/ManageUser";
        {
         path:'/ManageUsers',
         element:<ManageUser/>
+      },
+      {
+        path:'/adminProfile',
+        element:<AdminProfile/>
+      },
+      {
+        path:'/ManageReview',
+        element:<ManageReview/>
+      },
+      {
+        path:"/ManageProperties",
+        element:<ManageProperties/>
       }
        
 

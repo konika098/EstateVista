@@ -1,7 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
-import useAxiosSecure from "../../Hooks/useAxiosSecure";
-import SharedButton from "../../Component/Loader/SharedButton/SharedButton";
 import Swal from "sweetalert2";
+import useAxiosSecure from "../../../Hooks/useAxiosSecure";
+import SharedButton from "../../../Component/Loader/SharedButton/SharedButton";
+
 
 const ManageUser = () => {
     const axiosSecure = useAxiosSecure();

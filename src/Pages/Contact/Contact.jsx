@@ -8,7 +8,7 @@ import useAxiosPublic from '../../Hooks/usePublic/useAxiosPublic';
 
 const Contact = () => {
     const [activeTab, setActiveTab] = useState('login');
-    const { logIn, googleLogin, createUser, updateUserDetails } = useContext(AuthContext)
+    const { logIn, googleLogin, createUser, updateUserDetails,user } = useContext(AuthContext)
     const axiosPublic =useAxiosPublic()
     const logInNav = useNavigate()
     const location = useLocation();
@@ -23,7 +23,8 @@ const Contact = () => {
             console.log(result);
             const userInfo ={
                 email:result.user?.email,
-                name:result.user.displayName
+                name:result.user.displayName,
+                photo:user.photoUrl
             }
             axiosPublic.post('/users',userInfo)
             .then(res=>{
@@ -55,7 +56,7 @@ const Contact = () => {
                 title: "Login Successful",
                 text: "You have successfully logged in!",
             });
-            
+            logInNav('/')
         })
         .catch(error => {
             console.log(error);
@@ -72,15 +73,7 @@ const Contact = () => {
             logIn(email, password)
                 .then(result => {
                     console.log(result);
-                    const userInfo ={
-                        email:result.user?.email,
-                        name:result.user.displayName
-                    }
-                    axiosPublic.post('/users',userInfo)
-                    .then(res=>{
-                        console.log(res.data)
-                     
-                    })
+                    
                     logInNav('/')
                    
                     Swal.fire({
@@ -145,15 +138,32 @@ const Contact = () => {
             const name = e.target.name.value;
             const password = e.target.password.value;
             console.log(email, password, photo, name);
+
             createUser(email, password)
+            
                 .then(result => {
                     console.log(result);
-                    updateUserDetails("", photo);
+                    updateUserDetails(name, photo)
+                    .then(result=>{
+                        console.log(result)
+                    })
+                    .catch(error=>{console.log(error)})
+                    const userInfo ={
+                        email:result.user?.email,
+                        name:name,
+                        photo:photo,
+                        role:'user',
+                        
+
+                    }
+                    axiosPublic.post('/users',userInfo)
+                    
                     Swal.fire({
                         icon: "success",
                         title: "Register Successful",
                         text: "You have successfully registered!",
                     });
+                    logInNav('/')
                     //  window.location.reload()
                 })
                 .catch(error => {

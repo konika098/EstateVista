@@ -1,13 +1,23 @@
 
 import { Link, NavLink } from 'react-router-dom';
 import { IoIosContact } from "react-icons/io";
+import { useContext } from 'react';
+import { AuthContext } from '../../../Provider/AuthProvider';
+import SharedButton from "../../../Component/Loader/SharedButton/SharedButton";
 
 const Header = () => {
+  const {user,logOut} =useContext(AuthContext)
+  const handleLogOut =()=>{
+    logOut()
+    .then(()=>console.log("successfully log out"))
+    .catch(error=>console.error(error))
+}
+
   const navbar = (
     <>
       <NavLink to="/">Home</NavLink>
       <NavLink to="/all" className="ml-5">All Properties</NavLink>
-      <NavLink to="/about" className="ml-5">About</NavLink>
+     
       <NavLink to="/dashboard" className="ml-5">Dashboard</NavLink>
     </>
   );
@@ -32,7 +42,26 @@ const Header = () => {
           </ul>
         </div>
         <div className="navbar-end">
+          
+          {
+          user? "":<>
           <Link to='/contact' className='text-4xl'><IoIosContact /></Link>
+          </>
+        }
+        <div className="flex items-center gap-1 ">
+          {
+            user?<img className="rounded-full w-9 md:w-16" src={user.photoURL} alt="" />:""
+          }
+          {
+            user?<>
+            <Link onClick={handleLogOut} > 
+            <SharedButton   icon={'https://i.ibb.co/2h8ypvc/126467.png'} name={'Logout'}></SharedButton>
+            </Link> 
+           
+            </>
+          :" "
+          }
+          </div>
         </div>
       </div>
     </div>
