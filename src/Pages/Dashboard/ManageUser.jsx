@@ -8,7 +8,7 @@ const ManageUser = () => {
   const { data: users = [], refetch } = useQuery({
     queryKey: ['user'], // Note: I changed this from 'users' to 'user' assuming it's for a single user
     queryFn: async () => {
-      const res = await axiosSecure.get('user');
+      const res = await axiosSecure.get('/user');
       return res.data;
     },
     });
@@ -77,7 +77,7 @@ const ManageUser = () => {
                                 <td >
                                    <div  className="flex gap-2">
                                   {
-                                    user.role ==="admin" ?'Admin': <SharedButton onClick={handleMakeAdmin(user)} icon={'https://i.ibb.co/Q9H1K4M/user-gear-10416182.png'} name={'Admin'}></SharedButton>
+                                    user.role ==="admin" ?'Admin': <SharedButton onClick={()=>{handleMakeAdmin(user)}} icon={'https://i.ibb.co/Q9H1K4M/user-gear-10416182.png'} name={'Admin'}></SharedButton>
                                   }
                                     <SharedButton icon={'https://i.ibb.co/mHzZqWz/call-center-agent-2645835.png'} name={'Agent'}></SharedButton>
                                    </div>
@@ -85,7 +85,7 @@ const ManageUser = () => {
                                 <td >
                                 <div className="flex gap-2">
                                 <SharedButton icon={'https://i.ibb.co/qYzxsm2/outsider-10642032.png'} name={'Fraud'}></SharedButton>
-                                <SharedButton onClick={handleDeleteUser(user)} icon={'https://i.ibb.co/7NHmDNw/delete-7376060.png'} name={'Delete'}></SharedButton>
+                                <SharedButton onClick={()=>{handleDeleteUser(user)}} icon={'https://i.ibb.co/7NHmDNw/delete-7376060.png'} name={'Delete'}></SharedButton>
                                 </div>
 
                                 </td>
