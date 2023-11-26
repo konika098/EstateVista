@@ -17,7 +17,7 @@ const AdminProfile = () => {
     
   <div className="flex flex-col mx-auto justify-center items-center md:flex-row shadow rounded-xl max-w-7xl md:w-[50%]  m-2">
   <div>
-        <img src={user.photoURL} alt="" />
+        <img src={user?.photoURL} alt="" />
     </div>
     <form onSubmit={handleAdminForm} className=" w-full  ">
       

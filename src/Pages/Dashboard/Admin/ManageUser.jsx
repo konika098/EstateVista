@@ -7,7 +7,7 @@ import SharedButton from "../../../Component/Loader/SharedButton/SharedButton";
 const ManageUser = () => {
     const axiosSecure = useAxiosSecure();
   const { data: users = [], refetch } = useQuery({
-    queryKey: ['user'], // Note: I changed this from 'users' to 'user' assuming it's for a single user
+    queryKey: ['user'], 
     queryFn: async () => {
       const res = await axiosSecure.get('/user');
       return res.data;
@@ -56,7 +56,7 @@ const ManageUser = () => {
 
     return (
         <>
-            <h1>im user {users.length}</h1>
+           
             <div className="overflow-x-auto w-full">
                 <table className="table">
                     {/* head */}

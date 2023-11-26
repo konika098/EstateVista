@@ -23,6 +23,10 @@ import MyReviews from "../Pages/Dashboard/User/MyReviews";
 import Property from "../Pages/Dashboard/User/Property";
 import Wishlist from "../Pages/Dashboard/User/Wishlist";
 import AdminRoute from "../Provider/AdminRoute";
+import AddProperties from "../Pages/Dashboard/Agent/AddProperties";
+import ManageAdvertisment from "../Pages/Dashboard/Admin/ManageAdvertisement";
+import ManageAdvertisement from "../Pages/Dashboard/Admin/ManageAdvertisement";
+import AddAdvertisement from "../Pages/Dashboard/Agent/AddAdvertisement";
 
 
 
@@ -61,19 +65,23 @@ import AdminRoute from "../Provider/AdminRoute";
         children:[
           {
             path:'/dashboard/ManageUsers',
-            element:<AdminRoute><ManageUser/></AdminRoute>
+            element:<ManageUser/>
           },
           {
             path:'/dashboard/adminProfile',
-            element:<AdminRoute><AdminProfile/></AdminRoute>
+            element:<AdminProfile/>
           },
           {
             path:'/dashboard/ManageReview',
-            element:<AdminRoute><ManageReview/></AdminRoute>
+            element:<ManageReview/>
+          },
+          {
+            path:'/dashboard/ManageAdvertisement',
+            element:<ManageAdvertisement/>
           },
           {
             path:"/dashboard/ManageProperties",
-            element:<AdminRoute><ManageProperties/></AdminRoute>
+            element:<ManageProperties/>
           },
           {
             path:'/dashboard/agentProfile',
@@ -81,7 +89,15 @@ import AdminRoute from "../Provider/AdminRoute";
           },
           {
             path:"/dashboard/addProperties",
+            element:<AddProperties/>
+          },
+          {
+            path:"/dashboard/myProperties",
             element:<MyAddProperties/>
+          },
+          {
+            path:"/dashboard/addAdvertisement",
+            element:<AddAdvertisement/>
           },
           {
             path:"/dashboard/soldProperties",

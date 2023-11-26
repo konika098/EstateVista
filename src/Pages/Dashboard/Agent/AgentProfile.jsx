@@ -1,9 +1,11 @@
-import  { useContext } from 'react';
+import  { useContext, useState } from 'react';
 import { AuthContext } from '../../../Provider/AuthProvider';
-import PropertiesAdd from './PropertiesAdd';
+
 
 const AgentProfile = () => {
     const {user}=useContext(AuthContext)
+    const [displayName, setDisplayName] = useState(user ? user.displayName : '');
+    // console.log(user)
     const handleAdminForm=e=>{
         e.preventDefault()
         const name=e.target.name.value;
@@ -17,22 +19,22 @@ const AgentProfile = () => {
     
   <div className="flex flex-col mx-auto justify-center items-center md:flex-row shadow rounded-xl w-full p-10  m-2">
   <div>
-        <img src={user.photoURL} alt="" />
+        {/* <img src={user.photoURL} alt="" /> */}
     </div>
     <form onSubmit={handleAdminForm} className=" w-full ">
       
       <div className="flex flex-col justify-center items-center m-2 space-y-6 md:space-y-8">
         <div >
           <div className="m-1 mb-3 text-lg text-gray-500 text-semibold">Profile Name</div>
-          <input type="text" value={user.displayName} className="border-b border-gray-500 focus:outline-none  text-gray-500 placeholder:opacity-50 font-semibold md:w-72 lg:w-[340px] bg-transparent" />
+          <input type="text"  className="border-b border-gray-500 focus:outline-none  text-gray-500 placeholder:opacity-50 font-semibold md:w-72 lg:w-[340px] bg-transparent" />
         </div>
         <div >
           <div className="m-1 text-lg text-gray-500 text-semibold">Username</div>
-          <input name='name' placeholder="enter your username" type="text" className="border-b border-gray-500 focus:outline-none  text-gray-500 placeholder:opacity-50 font-semibold md:w-72 lg:w-[340px] bg-transparent" />
+          <input name='name' defaultValue={displayName} onChange={(e) => setDisplayName(e.target.value)} placeholder="enter your username" type="text" className="border-b border-gray-500 focus:outline-none  text-gray-500 placeholder:opacity-50 font-semibold md:w-72 lg:w-[340px] bg-transparent" />
         </div>
         <div >
           <div className="m-1 text-lg text-gray-500 text-semibold">E-mail</div>
-          <input value={user.email} type="text" className="border-b border-gray-500 focus:outline-none  text-gray-500 placeholder:opacity-50 font-semibold md:w-72 lg:w-[340px] bg-transparent" />
+          <input defaultValue={user ? user.email : ''} type="text" className="border-b border-gray-500 focus:outline-none  text-gray-500 placeholder:opacity-50 font-semibold md:w-72 lg:w-[340px] bg-transparent" />
         </div>
         <div className>
           <div className="m-1 text-lg text-gray-500 text-semibold">Phone</div>
@@ -50,7 +52,7 @@ const AgentProfile = () => {
    
   </div>
 
-  <PropertiesAdd/>
+  
 
 
       

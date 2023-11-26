@@ -11,7 +11,7 @@ const Dashboard = () => {
   return (
     <>
 
-      <div className='flex'>
+      <div className='flex '>
         <div className="drawer  lg:drawer-open">
           <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
           <div className="drawer-content flex flex-col items-center justify-center">
@@ -29,6 +29,7 @@ const Dashboard = () => {
     <>
       <NavLink to='/dashboard/adminProfile' className='ml-2 flex items-center gap-2'><MdAccountCircle />Admin Profile</NavLink>
       <NavLink to="/dashboard/ManageProperties" className='ml-2 flex items-center gap-2'><AiTwotoneShop />Manage Properties</NavLink>
+      <NavLink to="/dashboard/ManageAdvertisement " className='ml-2 flex items-center gap-2'><AiTwotoneShop />Manage Advertisement </NavLink>
       <NavLink to='/dashboard/ManageUsers' className='ml-2 flex items-center gap-2'><AiOutlineUsergroupAdd /> Manage Users</NavLink>
       <NavLink to="/dashboard/ManageReview" className='ml-2 flex items-center gap-2'><AiOutlineSolution />Manage reviews</NavLink>
       <div className="divider">OR</div>
@@ -37,19 +38,21 @@ const Dashboard = () => {
     </>
   ) : isAgent ? (
     <>
-      <NavLink to='/dashboard/agentProfile'>Agent Profile</NavLink>
-      <NavLink to='/dashboard/addProperties'>My Added Properties</NavLink>
-      <NavLink to='/dashboard/soldProperties'>My Sold Properties</NavLink>
-      <NavLink to='/dashboard/request'>Requested Properties</NavLink>
+      <NavLink to='/dashboard/agentProfile' className='ml-2 flex items-center gap-2'>Agent Profile</NavLink>
+      <NavLink to='/dashboard/addProperties' className='ml-2 flex items-center gap-2'>Add Properties</NavLink>
+      <NavLink to='/dashboard/myProperties' className='ml-2 flex items-center gap-2'>My Added Properties</NavLink>
+      <NavLink to="/dashboard/addAdvertisement " className='ml-2 flex items-center gap-2'>Add Advertisement </NavLink>
+      <NavLink to='/dashboard/soldProperties' className='ml-2 flex items-center gap-2'>My Sold Properties</NavLink>
+      <NavLink to='/dashboard/request' className='ml-2 flex items-center gap-2'>Requested Properties</NavLink>
       <div className="divider ">OR</div>
       <NavLink to="/" className='ml-2 flex items-center gap-2'><IoHomeSharp />Home</NavLink>
     </>
   ) : (
     <>
-      <NavLink to='/dashboard/myProfile'>My Profile</NavLink>
-      <NavLink to='/dashboard/wishlist'>Wishlist</NavLink>
-      <NavLink to='/dashboard/propertyBought'>Property Bought</NavLink>
-      <NavLink to='/dashboard/myReviews'>My Reviews</NavLink>
+      <NavLink to='/dashboard/myProfile'className='ml-2 flex items-center gap-2'>My Profile</NavLink>
+      <NavLink to='/dashboard/wishlist' className='ml-2 flex items-center gap-2'>Wishlist</NavLink>
+      <NavLink to='/dashboard/propertyBought' className='ml-2 flex items-center gap-2'>Property Bought</NavLink>
+      <NavLink to='/dashboard/myReviews' className='ml-2 flex items-center gap-2'>My Reviews</NavLink>
       <div className="divider ">OR</div>
       <NavLink to="/" className='ml-2 flex items-center gap-2'><IoHomeSharp />Home</NavLink>
     </>
@@ -61,7 +64,7 @@ const Dashboard = () => {
           </div>
         </div>
 
-        <div className='flex-1'>
+        <div className=''>
           <Outlet />
         </div>
       </div>
