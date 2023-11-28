@@ -78,7 +78,7 @@ const ManageUser = () => {
                                 <td >
                                    <div  className="flex gap-2">
                                   {
-                                    user.role ==="admin" ?'Admin': <SharedButton onClick={()=>{handleMakeAdmin(user)}} icon={'https://i.ibb.co/Q9H1K4M/user-gear-10416182.png'} name={'Admin'}></SharedButton>
+                                    user.role ==="admin" ?'Admin': <button onClick={()=>{handleMakeAdmin(user)}} className="btn">hello world</button>
                                   }
                                     <SharedButton icon={'https://i.ibb.co/mHzZqWz/call-center-agent-2645835.png'} name={'Agent'}></SharedButton>
                                    </div>

@@ -27,6 +27,9 @@ import AddProperties from "../Pages/Dashboard/Agent/AddProperties";
 import ManageAdvertisment from "../Pages/Dashboard/Admin/ManageAdvertisement";
 import ManageAdvertisement from "../Pages/Dashboard/Admin/ManageAdvertisement";
 import AddAdvertisement from "../Pages/Dashboard/Agent/AddAdvertisement";
+import Details from "../Layout/DetailsPage/Data";
+import Data from "../Layout/DetailsPage/Data";
+import AllPropertiesDetails from "../Pages/AllProperties/AllPropertiesDetails";
 
 
 
@@ -41,18 +44,27 @@ import AddAdvertisement from "../Pages/Dashboard/Agent/AddAdvertisement";
         element:<Home/>
        },
        {
-        path:'/about',
-        element:<PrivateRoute><About/></PrivateRoute>
-       },
-       {
         path:'/contact',
         element:<Contact/>
        },
+      
+       {
+        path:'/detailsData',
+        element:<Data/>,
+        loader:(params)=>fetch(`http://localhost:5000/details/${params.id}`)
+       },
        {
         path:'/all',
-        element:<AllProperties/>
+        element:<AllProperties/>,
+        loader:(params)=>fetch(`http://localhost:5000/AllProperties/${params.id}`)
 
        },
+       {
+        path:'/all/:id',
+        element:<AllPropertiesDetails/>,
+        loader:(params)=>fetch(`http://localhost:5000/AllProperties/${params.id}`)
+
+       }
       
        
 
@@ -81,7 +93,8 @@ import AddAdvertisement from "../Pages/Dashboard/Agent/AddAdvertisement";
           },
           {
             path:"/dashboard/ManageProperties",
-            element:<ManageProperties/>
+            element:<ManageProperties/>,
+            loader:()=>fetch('http://localhost:5000/NewPostProperties')
           },
           {
             path:'/dashboard/agentProfile',
