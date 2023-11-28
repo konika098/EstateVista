@@ -3,16 +3,22 @@ import { MdAccountCircle } from "react-icons/md";
 import { AiOutlineSolution, AiOutlineUsergroupAdd, AiTwotoneShop } from "react-icons/ai";
 import useAdmin from '../../Hooks/useAdmin';
 import { IoHomeSharp } from "react-icons/io5";
+import useAgent from '../../Hooks/useAgent';
+
+
 
 
 const Dashboard = () => {
+  
   const [isAdmin] = useAdmin()
-  const isAgent =true
+  const [isAgent] =useAgent()
+  console.log(isAgent,isAdmin);
+
   
   return (
     <>
 
-      <div className='flex '>
+      <div className='flex w-full'>
         <div className="drawer  lg:drawer-open">
           <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
           <div className="drawer-content flex flex-col items-center justify-center">
@@ -22,7 +28,7 @@ const Dashboard = () => {
             </label>
 
           </div>
-          <div className="drawer-side">
+          <div className="drawer-side w-[400px]">
             <label htmlFor="my-drawer-2" aria-label="close sidebar" className="drawer-overlay"></label>
             <ul className="menu p-4 w-80 min-h-full bg-[#004274] text-white text-xl gap-5">
             {
@@ -37,7 +43,7 @@ const Dashboard = () => {
       <NavLink to="/" className='ml-2 flex items-center gap-2'><IoHomeSharp />Home</NavLink>
 
     </>
-  ) : isAgent ? (
+  ) : isAgent ?(
     <>
       <NavLink to='/dashboard/agentProfile' className='ml-2 flex items-center gap-2'>Agent Profile</NavLink>
       <NavLink to='/dashboard/addProperties' className='ml-2 flex items-center gap-2'>Add Properties</NavLink>
@@ -60,12 +66,13 @@ const Dashboard = () => {
   )
 }
 
+
             </ul>
 
           </div>
         </div>
 
-        <div className=''>
+        <div className='flex-grow'>
           <Outlet />
         </div>
       </div>

@@ -30,6 +30,7 @@ import AddAdvertisement from "../Pages/Dashboard/Agent/AddAdvertisement";
 import Details from "../Layout/DetailsPage/Data";
 import Data from "../Layout/DetailsPage/Data";
 import AllPropertiesDetails from "../Pages/AllProperties/AllPropertiesDetails";
+import AllPropertiesCards from "../Pages/AllProperties/AllPropertiesCards";
 
 
 
@@ -48,21 +49,21 @@ import AllPropertiesDetails from "../Pages/AllProperties/AllPropertiesDetails";
         element:<Contact/>
        },
       
-       {
-        path:'/detailsData',
-        element:<Data/>,
-        loader:(params)=>fetch(`http://localhost:5000/details/${params.id}`)
-       },
+      //  {
+      //   path:'/detailsData',
+      //   element:<Data/>,
+      //   loader:(params)=>fetch(`http://localhost:5000/details/${params.id}`)
+      //  },
        {
         path:'/all',
         element:<AllProperties/>,
-        loader:(params)=>fetch(`http://localhost:5000/AllProperties/${params.id}`)
+        loader:()=>fetch(`http://localhost:5000/AllProperties`)
 
        },
        {
-        path:'/all/:id',
-        element:<AllPropertiesDetails/>,
-        loader:(params)=>fetch(`http://localhost:5000/AllProperties/${params.id}`)
+        path:'/AllProperties/:id',
+        element:<AllPropertiesCards/>,
+        loader:({params})=>fetch(`http://localhost:5000/AllProperties/${params.id}`)
 
        }
       

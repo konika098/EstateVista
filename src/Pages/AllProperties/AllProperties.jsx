@@ -1,12 +1,13 @@
-
 import { Link, useLoaderData } from "react-router-dom";
 
 
 const AllProperties = () => {
     const data = useLoaderData()
+    console.log(data)
+  
 
 
-    const allProperties = data.filter(item => item.verificationStatus === "verify")
+    const allProperties = data?.filter(item => item.verificationStatus === "verify")
 
 
 
@@ -24,7 +25,7 @@ const AllProperties = () => {
                                 <p>Min-Price{Data.minPrice}</p>
                                 <p className="text-yellow-600 font-semibold text-lg w-28 p-2">Verify:{Data.verificationStatus}</p>
                                 <div className="card-actions justify-end flex">
-                                    <Link to={`/all/${Data?._id}`}><button className="btn bg-[#004274] text-white">Details</button></Link>
+                                    <Link to={`/AllProperties/${Data?._id}`}><button className="btn bg-[#004274] text-white">Details</button></Link>
 
                                 </div>
                             </div>
