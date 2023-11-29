@@ -42,7 +42,7 @@ const Wishlist = () => {
     
     return (
         <>
-            <div className=" ">
+            <div>
             {
                 wish.map(item => <div key={item.id}>
                     <div className="card w-96 bg-base-100 shadow-xl">
