@@ -4,20 +4,26 @@ import { AiOutlineSolution, AiOutlineUsergroupAdd, AiTwotoneShop } from "react-i
 import useAdmin from '../../Hooks/useAdmin';
 import { IoHomeSharp } from "react-icons/io5";
 import useAgent from '../../Hooks/useAgent';
+import { useContext } from 'react';
+import { AuthContext } from '../../Provider/AuthProvider';
+import Loader from '../../Component/Loader/Loader';
 
 
 
 
 const Dashboard = () => {
+  const {loading} =useContext(AuthContext)
   
-  const [isAdmin] = useAdmin()
-  const [isAgent] =useAgent()
-  console.log(isAgent,isAdmin);
-
+  const [isAdmin,isAdminLoading] = useAdmin()
+  const [isAgent,isAgentLoading] =useAgent()
+  // console.log(isAgent,isAdmin);
+  if (loading || isAdminLoading || isAgentLoading) {
+    return <Loader/>
+}
   
   return (
     <>
-
+     
       <div className='flex w-full'>
         <div className="drawer  lg:drawer-open">
           <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />

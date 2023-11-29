@@ -17,7 +17,7 @@ const Advertisement = () => {
     return (
        <>
        <h1 className='text-5xl mt-10 font-semibold mb-4 text-[#004274] text-center'>Advertisement</h1>
-      <div className='grid grid-cols-3'>
+      <div className='grid grid-cols-3 gap-2'>
       {
        
        adsData.map(Data=> <div key={Data._id}>

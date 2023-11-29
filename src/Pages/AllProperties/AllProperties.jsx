@@ -33,6 +33,7 @@ const AllProperties = () => {
 
                     </div>)
                 }
+               
             </div>
 
         </>

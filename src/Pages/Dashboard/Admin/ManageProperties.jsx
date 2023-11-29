@@ -16,7 +16,7 @@ const ManageProperties = () => {
         axiosSecure.put(`/Verify/${id}`)
             .then((res) => {
                 console.log(res);
-                updateVerificationStatus(id, "Verified");
+                updateVerificationStatus(id, "Verify");
             })
             .catch((error) => console.error("Error updating verification status:", error));
     };
@@ -63,11 +63,53 @@ const ManageProperties = () => {
                                 <td>{item.agentEmail}</td>
                                 <td>{item.verificationStatus}</td>
                                 <td>
+                                    {
+                                        item.verificationStatus === 'Verify' ?
+                                            <>
+                                                {item.verificationStatus}
+                                            </>
+                                            :
+                                            <>
+                                                {
+                                                    item.verificationStatus === 'Rejected' ?
+                                                        <>{item.verificationStatus}</>
+                                                        :
+                                                        <>
+                                                            <button  onClick={() => setVerify(item._id)} className="btn-one">Verify</button>
+                                                        </>
+                                                }
+                                            </>
+                                    }
+                                </td>
+                                <td>
+                                    {
+                                        item.verificationStatus === 'Verify' ?
+                                            <>
+                                                {item.verificationStatus}
+                                            </>
+                                            :
+                                            <>
+                                                {
+                                                    item.verificationStatus === 'Rejected' ?
+                                                        <>{item.verificationStatus}</>
+                                                        :
+                                                        <>
+                                                            <button onClick={() => setReject(item._id)} className="btn-one">Reject</button>
+                                                        </>
+                                                }
+                                            </>
+                                    }
+
+                                </td>
+                                {/* <td>
                                     <div className="flex gap-2">
+                                        {
+                                            item.verificationStatus === 'verify'
+                                        }
                                         <button onClick={() => setVerify(item._id)} className="btn">Verify</button>
                                         <button onClick={() => setReject(item._id)} className="btn">Reject</button>
                                     </div>
-                                </td>
+                                </td> */}
                             </tr>
                         ))}
                     </tbody>

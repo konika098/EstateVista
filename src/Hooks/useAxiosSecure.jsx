@@ -33,14 +33,14 @@ const useAxiosSecure = () => {
 
         if (status === 401 || status === 403) {
           await logOut();
-          navigate('/login');
+          navigate('/contact');
           console.log(status)
         }
         return Promise.reject(error);
       }
     );
 
-    // Cleanup interceptors when component unmounts
+    
     return () => {
       axiosSecure.interceptors.request.eject(requestInterceptor);
       axiosSecure.interceptors.response.eject(responseInterceptor);

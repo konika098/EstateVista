@@ -6,6 +6,7 @@ import Header from '../../Pages/Shared/Header/Header';
 const Main = () => {
     return (
         <>
+            <div className='max-w-screen-xl mx-auto'>
             <Headroom>
                <Header/>
             </Headroom>
@@ -14,6 +15,7 @@ const Main = () => {
             </div>
             
             <Footer/>
+            </div>
 
            
 

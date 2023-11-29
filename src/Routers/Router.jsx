@@ -22,15 +22,11 @@ import MyProfile from "../Pages/Dashboard/User/MyProfile";
 import MyReviews from "../Pages/Dashboard/User/MyReviews";
 import Property from "../Pages/Dashboard/User/Property";
 import Wishlist from "../Pages/Dashboard/User/Wishlist";
-import AdminRoute from "../Provider/AdminRoute";
 import AddProperties from "../Pages/Dashboard/Agent/AddProperties";
-import ManageAdvertisment from "../Pages/Dashboard/Admin/ManageAdvertisement";
 import ManageAdvertisement from "../Pages/Dashboard/Admin/ManageAdvertisement";
 import AddAdvertisement from "../Pages/Dashboard/Agent/AddAdvertisement";
-import Details from "../Layout/DetailsPage/Data";
-import Data from "../Layout/DetailsPage/Data";
-import AllPropertiesDetails from "../Pages/AllProperties/AllPropertiesDetails";
 import AllPropertiesCards from "../Pages/AllProperties/AllPropertiesCards";
+import Offer from "../Pages/Dashboard/User/Offer";
 
 
 
@@ -74,7 +70,7 @@ import AllPropertiesCards from "../Pages/AllProperties/AllPropertiesCards";
     {
       
         path:'/dashboard',
-        element:<Dashboard/>,
+        element:<PrivateRoute><Dashboard/></PrivateRoute>,
         children:[
           {
             path:'/dashboard/ManageUsers',
@@ -90,7 +86,8 @@ import AllPropertiesCards from "../Pages/AllProperties/AllPropertiesCards";
           },
           {
             path:'/dashboard/ManageAdvertisement',
-            element:<ManageAdvertisement/>
+            element:<ManageAdvertisement/>,
+            loader:()=>fetch('http://localhost:5000/newAdvertisement')
           },
           {
             path:"/dashboard/ManageProperties",
@@ -104,6 +101,10 @@ import AllPropertiesCards from "../Pages/AllProperties/AllPropertiesCards";
           {
             path:"/dashboard/addProperties",
             element:<AddProperties/>
+          },
+          {
+            path:"/dashboard/offer",
+            element:<Offer/>
           },
           {
             path:"/dashboard/myProperties",

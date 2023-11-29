@@ -8,9 +8,10 @@ import useAxiosPublic from "../Hooks/usePublic/useAxiosPublic";
 
 export const AuthContext = createContext(null)
 const google = new GoogleAuthProvider()
-// eslint-disable-next-line react-hooks/rules-of-hooks
-const axiosPublic= useAxiosPublic()
+
+
 const AuthProvider = ({ children }) => {
+    const axiosPublic= useAxiosPublic()
     const [user, setUser] = useState(null)
     const [loading, setLoading] = useState(true)
 
@@ -69,7 +70,7 @@ const AuthProvider = ({ children }) => {
         return ()=>{
             return unsubscribe();
         }
-    }, [])
+    },[axiosPublic])
 
 
 

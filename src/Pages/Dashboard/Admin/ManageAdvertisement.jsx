@@ -1,22 +1,45 @@
 import { useEffect, useState } from "react";
-import SharedButton from "../../../Component/Loader/SharedButton/SharedButton";
+import { IoShieldCheckmarkSharp } from "react-icons/io5";
+import { ImCross } from "react-icons/im";
+import useAxiosSecure from "../../../Hooks/useAxiosSecure";
+import { useLoaderData } from "react-router-dom";
 
 
 const ManageAdvertisement = () => {
     const [data, setData] = useState([])
-    const fetchUserData = () => {
-        fetch("http://localhost:5000/newAdvertisement")
-            .then(response => {
-                return response.json()
-            })
-            .then(data => {
-                setData(data)
-                console.log(data)
-            })
-    }
+    const axiosSecure = useAxiosSecure();
+    const loaderData = useLoaderData();
+
     useEffect(() => {
-        fetchUserData()
-    }, [])
+        setData(loaderData);
+    }, [loaderData]);
+
+    const setVerify = (id) => {
+        axiosSecure.put(`/Verify/${id}`)
+            .then((res) => {
+                console.log(res);
+                updateVerificationStatus(id, "Verified");
+            })
+            .catch((error) => console.error("Error updating verification status:", error));
+    };
+    const setReject = (id) => {
+        axiosSecure.put(`/Reject/${id}`)
+            .then((res) => {
+                console.log(res);
+                updateVerificationStatus(id, "Rejected");
+            })
+            .catch((error) => console.error("Error updating verification status:", error));
+    };
+
+    const updateVerificationStatus = (id, newStatus) => {
+        setData((prevData) =>
+            prevData.map((item) =>
+                item._id === id ? { ...item, verificationStatus: newStatus } : item
+            )
+        );
+    };
+
+    
     return (
         <>
 
@@ -30,30 +53,33 @@ const ManageAdvertisement = () => {
                             <th>Image</th>
                             <th>Location</th>
                             <th>Price</th>
+                            <th>Status</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         {
-                            data.map((Data, index) => <tr key={Data._id} className="text-lg" >
+                            data.map((item, index) => <tr key={item._id} className="text-lg" >
                                 <th>{index + 1}</th>
                                 <td>
                                     <div className="flex items-center gap-3">
                                         <div className="avatar">
                                             <div className="mask mask-squircle w-12 h-12">
-                                                <img src={Data.photo} alt="" />
+                                                <img src={item.photo} alt="" />
                                             </div>
                                         </div>
 
                                     </div>
                                 </td>
-                                <td>{Data.location}</td>
-                                <td>{Data.maxPrice}</td>
+                                <td>{item.location}</td>
+                                <td>{item.maxPrice}</td>
+                                <td>{item.verificationStatus}</td>
                                 <td >
                                 <div className="flex gap-2">
-                                <SharedButton icon={'https://i.ibb.co/YQR4xZ3/426713-200.png'} name={'Verify'}></SharedButton>
-                                <SharedButton  icon={'https://i.ibb.co/bmcg1Xq/png-transparent-cancel-exit-reject-ui-close-interface-remove-uiux-line-icon.png'} name={'Reject'}></SharedButton>
-                                </div>                                </td>
+                                    <button onClick={() => setVerify(item._id)} className="btn-one text-black"><IoShieldCheckmarkSharp /></button>
+                                    <button onClick={() => setReject(item._id)} className="btn-one text-black" ><ImCross /></button>
+                               
+                                </div></td>
 
                             </tr>)
                         }

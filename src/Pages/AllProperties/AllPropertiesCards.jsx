@@ -1,13 +1,40 @@
 
 import { useLoaderData, useParams } from 'react-router-dom';
+import useAxiosSecure from '../../Hooks/useAxiosSecure';
+import Swal from 'sweetalert2';
 
 
 
 const AllPropertiesCards = () => {
     const {id}=useParams()
+    const axiosSecure = useAxiosSecure();
     console.log(id);
     const data =useLoaderData()
     console.log(data);
+    const handleWishList =()=>{
+      const WishItem ={
+       photo: data?.photo,
+       maxPrice:data?.maxPrice,
+       minPrice:data?.minPrice,
+       location:data?.location,
+       verificationStatus:data.verificationStatus,
+       title:data?.title
+
+
+      }
+      axiosSecure.post('/wishlist',WishItem)
+      .then(res=>{
+        console.log(res.data);
+        if(res.data.insertedId){
+          Swal.fire({
+            icon: "success",
+            title: 'add your property your wishList',
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        }
+      })
+    }
     
    
    
@@ -18,7 +45,7 @@ const AllPropertiesCards = () => {
     <div className="lg:w-4/5 mx-auto flex flex-wrap">
       <img alt="ecommerce" className="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded" src={data?.photo} />
       <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
-        <h2 className="text-sm title-font text-gray-500 tracking-widest">BRAND NAME</h2>
+        <h2 className="text-sm title-font text-gray-500 tracking-widest">{data?.agentEmail}</h2>
         <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">{data?.title}</h1>
         <div className="flex mb-4">
           <span className="flex items-center">
@@ -69,8 +96,8 @@ const AllPropertiesCards = () => {
          
        </div>
         <div className="flex mt-5">
-        <button className="flex ml-auto btn bg-[#004274] text-white">Wishlist</button>
-          <button className="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
+        <button className="flex ml-auto btn bg-[#004274] text-white">Buy Now</button>
+          <button onClick={handleWishList} className="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
             <svg fill="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} className="w-5 h-5" viewBox="0 0 24 24">
               <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" />
             </svg>
@@ -80,6 +107,8 @@ const AllPropertiesCards = () => {
     </div>
   </div>
 </section>
+
+<h1 className='text-2xl mb-10'>Review</h1>
 
  
      
