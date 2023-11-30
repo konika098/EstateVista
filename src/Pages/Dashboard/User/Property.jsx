@@ -35,6 +35,7 @@ const Property = () => {
                             <p>Location: {items.location}</p>
                             <p>Offer Price: {items.minPrice}</p>
                             <p className='text-orange-600'>Status: {items.status}</p>
+                            <button className='btn-one'>Pay Now</button>
                           
                         </div>
                     </div>

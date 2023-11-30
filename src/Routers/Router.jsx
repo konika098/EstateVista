@@ -27,6 +27,7 @@ import ManageAdvertisement from "../Pages/Dashboard/Admin/ManageAdvertisement";
 import AddAdvertisement from "../Pages/Dashboard/Agent/AddAdvertisement";
 import AllPropertiesCards from "../Pages/AllProperties/AllPropertiesCards";
 import Offer from "../Pages/Dashboard/User/Offer";
+import Review from "../Pages/AllProperties/Review";
 
 
 
@@ -62,7 +63,12 @@ import Offer from "../Pages/Dashboard/User/Offer";
         element:<AllPropertiesCards/>,
         loader:({params})=>fetch(`http://localhost:5000/AllProperties/${params.id}`)
 
-       }
+       },
+       {
+        path:"/review",
+        element:<Review/>,
+        loader:()=>fetch('http://localhost:5000/NewPostProperties')
+      },
       
        
 
@@ -95,6 +101,7 @@ import Offer from "../Pages/Dashboard/User/Offer";
             element:<ManageProperties/>,
             loader:()=>fetch('http://localhost:5000/NewPostProperties')
           },
+         
           {
             path:'/dashboard/agentProfile',
             element:<AgentProfile/>
