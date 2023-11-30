@@ -30,6 +30,7 @@ import Offer from "../Pages/Dashboard/User/Offer";
 
 
 
+
   export const router = createBrowserRouter([
     {
       path: "/",
@@ -103,9 +104,12 @@ import Offer from "../Pages/Dashboard/User/Offer";
             element:<AddProperties/>
           },
           {
-            path:"/dashboard/offer",
-            element:<Offer/>
+            path:"/dashboard/offer/:id",
+            element:<Offer/>,
+            loader:({params})=>fetch(`http://localhost:5000/wishList/${params.id}`)
           },
+         
+         
           {
             path:"/dashboard/myProperties",
             element:<MyAddProperties/>

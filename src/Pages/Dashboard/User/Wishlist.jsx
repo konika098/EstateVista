@@ -42,11 +42,11 @@ const Wishlist = () => {
     
     return (
         <>
-            <div>
+            <div className="flex gap-2 mt-10 mr-5">
             {
                 wish.map(item => <div key={item.id}>
                     <div className="card w-96 bg-base-100 shadow-xl">
-                        <figure><img src={item.photo} alt="" /></figure>
+                        <figure><img className="w-full h-80" src={item.photo} alt="" /></figure>
                         <div className="card-body">
                             <h2 className="card-title">{item.title}</h2>
                             <p>Location:{item.location}</p>
@@ -54,7 +54,7 @@ const Wishlist = () => {
                             <p>Min-Price:{item.minPrice}</p>
                             <p>Status:{item.verificationStatus}</p>
                             <div className="card-actions justify-end">
-                               <Link to='/dashboard/offer'> <button className="btn-one">Offer</button></Link>
+                               <Link to={`/dashboard/offer/${item?._id}`}> <button className="btn-one">Offer</button></Link>
                                 <button onClick={() => { handleDeleteWishList(item) }} className="btn-one">Remove</button>
                             </div>
                         </div>

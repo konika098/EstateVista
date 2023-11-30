@@ -64,7 +64,7 @@ const Dashboard = () => {
     <>
       <NavLink to='/dashboard/myProfile'className='ml-2 flex items-center gap-2'>My Profile</NavLink>
       <NavLink to='/dashboard/wishlist' className='ml-2 flex items-center gap-2'>Wishlist</NavLink>
-      <NavLink to='/dashboard/propertyBought' className='ml-2 flex items-center gap-2'>Property Bought</NavLink>
+      <NavLink to='/dashboard/property' className='ml-2 flex items-center gap-2'>Property Bought</NavLink>
       <NavLink to='/dashboard/myReviews' className='ml-2 flex items-center gap-2'>My Reviews</NavLink>
       <div className="divider ">OR</div>
       <NavLink to="/" className='ml-2 flex items-center gap-2'><IoHomeSharp />Home</NavLink>
