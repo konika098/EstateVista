@@ -3,7 +3,7 @@ import  { useEffect, useState } from 'react';
 const Services = () => {
     const [services, setServices] = useState([]);
     useEffect(()=>{
-        fetch('http://localhost:5000/services')
+        fetch('https://assignment12-server-teal.vercel.app/services')
         .then(response => {
             return response.json()
            
@@ -17,7 +17,7 @@ const Services = () => {
     return (
       <>
       <h1 className='text-5xl  text-[#004274] font-medium mb-16 mt-20'>Our Services</h1>
-      <div className='grid grid-cols-3 gap-4'>
+      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-5 gap-4'>
                 {services.map(service => (
                     <div key={service.id}>
                         <img className='w-12 h-12' src={service.icon} alt="" />

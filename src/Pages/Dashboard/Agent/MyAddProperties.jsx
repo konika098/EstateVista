@@ -6,7 +6,7 @@ const MyAddProperties = () => {
     const [data, setData] = useState([])
 
     const fetchUserData = () => {
-        fetch("http://localhost:5000/NewPostProperties")
+        fetch("https://assignment12-server-teal.vercel.app/NewPostProperties")
             .then(response => {
                 return response.json()
             })

@@ -25,7 +25,7 @@ const Offer = () => {
 
         }
         console.log(offerDetails);
-        fetch(`http://localhost:5000/offerDetails`, {
+        fetch(`https://assignment12-server-teal.vercel.app/offerDetails`, {
 
         method: 'POST',
         headers: {

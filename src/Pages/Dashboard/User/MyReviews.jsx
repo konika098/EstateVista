@@ -1,10 +1,10 @@
-import React from 'react';
+
 
 const MyReviews = () => {
     return (
-        <div>
-            
-        </div>
+        <>
+        <h1>hiii</h1>
+        </>
     );
 };
 

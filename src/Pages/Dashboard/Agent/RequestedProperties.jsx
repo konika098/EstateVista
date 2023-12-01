@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 const RequestedProperties = () => {
     const [Data, setData] = useState([])
     useEffect(() => {
-        fetch(`http://localhost:5000/offerDetails`, {
+        fetch(`https://assignment12-server-teal.vercel.app/offerDetails`, {
 
             method: 'GET',
             headers: {
@@ -24,7 +24,7 @@ const RequestedProperties = () => {
 
     const handleAccept = async (id) => {
 
-        fetch(`http://localhost:5000//Accept/${id}`, {
+        fetch(`https://assignment12-server-teal.vercel.app//Accept/${id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -45,7 +45,7 @@ const RequestedProperties = () => {
 
     const handleReject = async (id) => {
 
-        fetch(`http://localhost:5000/reject/${id}`, {
+        fetch(`https://assignment12-server-teal.vercel.app/reject/${id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',

@@ -13,7 +13,7 @@ const AllProperties = () => {
 
     return (
         <>
-            <div className="grid grid-cols-3 mb-10 mt-10">
+            <div className="grid grid-cols-1   lg:grid-cols-2 xl:grid-cols-3 mb-10 mt-10">
                 {
                     allProperties.map(Data => <div key={Data._id}>
                         <div className="card w-96 bg-base-100  shadow-xl">

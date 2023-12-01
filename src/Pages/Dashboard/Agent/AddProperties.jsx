@@ -29,7 +29,7 @@ const AddProperties = () => {
 
 
         //   });
-        fetch(`http://localhost:5000/NewProperties`, {
+        fetch(`https://assignment12-server-teal.vercel.app/NewProperties`, {
 
             method: 'POST',
             headers: {

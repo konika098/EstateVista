@@ -1,18 +1,18 @@
-import React from 'react';
+
 import useAxiosSecure from '../../Hooks/useAxiosSecure';
-import { useQuery } from "@tanstack/react-query";
+// import { useQuery } from "@tanstack/react-query";
 import Swal from 'sweetalert2';
 
 const Review = () => {
     const axiosSecure = useAxiosSecure();
-    const { data: review = [], refetch } = useQuery({
-      queryKey: ['review'],
-      queryFn: async () => {
-        const res = await axiosSecure.get('/review');
-        return res.data;
-      },
+    // const { data: review = []} = useQuery({
+    //   queryKey: ['review'],
+    //   queryFn: async () => {
+    //     const res = await axiosSecure.post('/review');
+    //     return res.data;
+    //   },
   
-    });
+    // });
 
     const handleReview =e=>{
         e.preventDefault()
@@ -34,31 +34,31 @@ const Review = () => {
         })
       }
       
-    const handleDeleteReview = (review) => {
-        Swal.fire({
-          title: "Are you sure?",
-          text: "You won't be able to revert this!",
-          icon: "warning",
-          showCancelButton: true,
-          confirmButtonColor: "#3085d6",
-          cancelButtonColor: "#d33",
-          confirmButtonText: "Yes, delete it!",
-        }).then((result) => {
-          if (result.isConfirmed) {
-            axiosSecure.delete(`/review/${review._id}`).then((res) => {
-              if (res.data.deletedCount > 0) {
-                refetch();
-                Swal.fire({
-                  title: "Deleted!",
-                  text: "Your file has been deleted.",
-                  icon: "success",
-                });
-              }
-            });
-          }
-        });
+    // const handleDeleteReview = (review) => {
+    //     Swal.fire({
+    //       title: "Are you sure?",
+    //       text: "You won't be able to revert this!",
+    //       icon: "warning",
+    //       showCancelButton: true,
+    //       confirmButtonColor: "#3085d6",
+    //       cancelButtonColor: "#d33",
+    //       confirmButtonText: "Yes, delete it!",
+    //     }).then((result) => {
+    //       if (result.isConfirmed) {
+    //         axiosSecure.delete(`/review/${review._id}`).then((res) => {
+    //           if (res.data.deletedCount > 0) {
+    //             refetch();
+    //             Swal.fire({
+    //               title: "Deleted!",
+    //               text: "Your file has been deleted.",
+    //               icon: "success",
+    //             });
+    //           }
+    //         });
+    //       }
+    //     });
     
-      }
+    //   }
     return (
        <>
            <div className="mt-10">
@@ -91,7 +91,7 @@ const Review = () => {
                     <div className="text-center flex flex-col w-[40%] items-center justify-center mx-auto mt-7">
                         <button className=" px-24 md:px-[118px] lg:px-[140px] py-2 rounded-md text-white bg-[#004274] hover:bg-[#004274] hover:text-white font-medium m-2 mb-6 ">submit
                         </button>
-                        <button onClick={() => { handleDeleteReview(review) }} className=" px-24 md:px-[118px] lg:px-[140px] py-2 rounded-md text-white bg-[#004274] hover:bg-[#004274] hover:text-white font-medium m-2 mb-6 ">Delete
+                        <button  className=" px-24 md:px-[118px] lg:px-[140px] py-2 rounded-md text-white bg-[#004274] hover:bg-[#004274] hover:text-white font-medium m-2 mb-6 ">Delete
                         </button>
 
                     </div>

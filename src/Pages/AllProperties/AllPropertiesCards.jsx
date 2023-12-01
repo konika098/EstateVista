@@ -86,7 +86,7 @@ const AllPropertiesCards = () => {
         </div>
         <p className="leading-relaxed">{data?.description}</p>
        
-        <div className="flex justify-between mt-5">
+        <div className="flex flex-col md:flex md:flex-row justify-between mt-5">
           <span className="title-font font-medium text-2xl text-gray-900">Max-Price:{data?.maxPrice}</span>
           <span className="title-font font-medium text-2xl text-gray-900">Min-price:{data?.minPrice}</span>
           

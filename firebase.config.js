@@ -6,12 +6,12 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBC2YMHAq3W-biQoQz7WEwihsD1RscpVgw",
-  authDomain: "assignment-13b1b.firebaseapp.com",
-  projectId: "assignment-13b1b",
-  storageBucket: "assignment-13b1b.appspot.com",
-  messagingSenderId: "1033782220574",
-  appId: "1:1033782220574:web:3f98c4aeb7c2032bbe9b0f"
+  apiKey: "AIzaSyCnmwaUcsDIwA36eXDCGQmzoTcQYdc7d-o",
+  authDomain: "estatevista-bace6.firebaseapp.com",
+  projectId: "estatevista-bace6",
+  storageBucket: "estatevista-bace6.appspot.com",
+  messagingSenderId: "289602619154",
+  appId: "1:289602619154:web:b9e7446624350f34d295cb"
 };
 
 // Initialize Firebase

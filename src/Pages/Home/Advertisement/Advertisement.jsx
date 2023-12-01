@@ -6,7 +6,7 @@ const Advertisement = () => {
 
 
     useEffect(() => {
-            fetch('http://localhost:5000/newAdvertisement')
+            fetch('https://assignment12-server-teal.vercel.app/newAdvertisement')
            .then(res => res.json())
            .then(result => {
             setData(result)
@@ -17,7 +17,7 @@ const Advertisement = () => {
     return (
        <>
        <h1 className='text-5xl mt-10 font-semibold mb-4 text-[#004274] text-center'>Advertisement</h1>
-      <div className='grid grid-cols-3 gap-2'>
+      <div className='grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2  gap-2'>
       {
        
        adsData.map(Data=> <div key={Data._id}>

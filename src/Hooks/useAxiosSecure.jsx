@@ -4,7 +4,7 @@ import { useContext, useEffect } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 
 const axiosSecure = axios.create({
-  baseURL: 'http://localhost:5000'
+  baseURL: 'https://assignment12-server-teal.vercel.app'
 });
 
 const useAxiosSecure = () => {
@@ -29,13 +29,16 @@ const useAxiosSecure = () => {
         return response;
       },
       async (error) => {
-        const status = error.response.status;
-
-        if (status === 401 || status === 403) {
-          await logOut();
-          navigate('/contact');
-          console.log(status)
+        if (error.response) {
+          const status = error.response.status;
+    
+          if (status === 401 || status === 403) {
+            await logOut();
+            navigate('/contact');
+            console.log(status);
+          }
         }
+    
         return Promise.reject(error);
       }
     );

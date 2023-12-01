@@ -14,7 +14,7 @@ const AddAdvertisement = () => {
         console.log(location, date, maxPrice, minPrice, photo,);
         const newAdvertisement = { title,verificationStatus, maxPrice, minPrice, location, date, photo }
         console.log(newAdvertisement)
-        fetch(`http://localhost:5000/newAdvertisement`, {
+        fetch(`https://assignment12-server-teal.vercel.app/newAdvertisement`, {
 
             method: 'POST',
             headers: {

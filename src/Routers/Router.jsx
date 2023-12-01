@@ -50,24 +50,24 @@ import Review from "../Pages/AllProperties/Review";
       //  {
       //   path:'/detailsData',
       //   element:<Data/>,
-      //   loader:(params)=>fetch(`http://localhost:5000/details/${params.id}`)
+      //   loader:(params)=>fetch(`https://assignment12-server-teal.vercel.app/details/${params.id}`)
       //  },
        {
         path:'/all',
         element:<AllProperties/>,
-        loader:()=>fetch(`http://localhost:5000/AllProperties`)
+        loader:()=>fetch(`https://assignment12-server-teal.vercel.app/AllProperties`)
 
        },
        {
         path:'/AllProperties/:id',
         element:<AllPropertiesCards/>,
-        loader:({params})=>fetch(`http://localhost:5000/AllProperties/${params.id}`)
+        loader:({params})=>fetch(`https://assignment12-server-teal.vercel.app/AllProperties/${params.id}`)
 
        },
        {
         path:"/review",
         element:<Review/>,
-        loader:()=>fetch('http://localhost:5000/NewPostProperties')
+        // loader:()=>fetch('https://assignment12-server-teal.vercel.app/')
       },
       
        
@@ -94,12 +94,12 @@ import Review from "../Pages/AllProperties/Review";
           {
             path:'/dashboard/ManageAdvertisement',
             element:<ManageAdvertisement/>,
-            loader:()=>fetch('http://localhost:5000/newAdvertisement')
+            loader:()=>fetch('https://assignment12-server-teal.vercel.app/newAdvertisement')
           },
           {
             path:"/dashboard/ManageProperties",
             element:<ManageProperties/>,
-            loader:()=>fetch('http://localhost:5000/NewPostProperties')
+            loader:()=>fetch('https://assignment12-server-teal.vercel.app/NewPostProperties')
           },
          
           {
@@ -113,7 +113,7 @@ import Review from "../Pages/AllProperties/Review";
           {
             path:"/dashboard/offer/:id",
             element:<Offer/>,
-            loader:({params})=>fetch(`http://localhost:5000/wishList/${params.id}`)
+            loader:({params})=>fetch(`https://assignment12-server-teal.vercel.app/wishList/${params.id}`)
           },
          
          
@@ -138,7 +138,7 @@ import Review from "../Pages/AllProperties/Review";
             element:<MyProfile/>
           },
           {
-            path:"/dashboard/myReview",
+            path:"/dashboard/myReviews",
             element:<MyReviews/>
           },
           {
